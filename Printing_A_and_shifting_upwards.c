@@ -27,8 +27,8 @@ int main(void)
     while (1) 
     {
 		
-		//for(int count=0;count<10;count++)
-		//{
+		for(int count=0;count<100;count++)
+		{
 			for(int i=0;i<8;i++)
 			{
 				PORTA=(1<<i);
@@ -39,35 +39,17 @@ int main(void)
 					_delay_ms(5);
 				}*/
 			}
-			
-			delay 1s
-		//}
-		
-		for(int i=0;i<8;i++)
-		{
-			if((col[i] & 0b10000000)==0b10000000)
-			col[i]=(col[i]<<1)+0b00000001;
-			else
-			col[i]=(col[i]<<1);
 		}
 		
-		
-		
-		
-		
-		/*for(int i=0;i<8;i++)
+	    	//shift upwards
+		for(int i=0;i<8;i++)
 		{
-			if((col[i] & 0b10000000)==0b10000000)
-				col[i]=
-		}*/
-		//PORTA=0b11111111;
-		//PORTD=0b00000000;
-		/*for(int i=0;i<8;i++)
-		{
-			PORTA=(1<<i);
-			PORTB=~col[i];
-			_delay_ms(5);
-		}*/
+			if((col[i] & 0b10000000)==0b10000000) //checking if the topmost bit of the column is 1, if 1, then it will be transferred to the bottommost bit of the column
+				col[i]=(col[i]<<1)+0b00000001;
+			else
+				col[i]=(col[i]<<1);
+		}
+		
     }
 }
 
