@@ -50,7 +50,7 @@ int main(void)
 	
 	GICR = 1<<INT1;
 	MCUCR = MCUCR | (1 << ISC11);  //falling edge
-	MCUCR = MCUCR & (~(1 << ISC10)); //ISC01 = 1, ISC00 = 0
+	MCUCR = MCUCR & (~(1 << ISC10)); //ISC11 = 1, ISC10 = 0
 	sei();
 	while(1);
 }
